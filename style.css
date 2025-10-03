@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trocar fundo - Pizzas</title>
+  <style>
+    :root{ --bg: #ffffff }
+    body{ font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; padding:24px; background:#a00e0e; color:#111 }
+    .controls{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:16px }
+    .btn{ padding:8px 12px; border-radius:8px; border:1px solid #8d2323; background:#a35b5b; cursor:pointer }
+    .btn--active{ outline:3px solid rgba(45, 140, 204, 0.15) }
+    .color-input{ padding:6px; border-radius:6px; border:1px solid #bbb }
+
+    .stage{ display:flex; gap:16px; justify-content:center; align-items:center; padding:24px; background:var(--bg); border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,.08) }
+    .card{ width:280px; text-align:center; border-radius:10px; overflow:hidden; background:rgba(255,255,255,.0) }
+    .card img{ width:100%; height:280px; object-fit:cover; display:block }
+    .caption{ padding:8px 12px; font-weight:600 }
+
+    .note{ margin-top:12px; font-size:13px; color:#444 }
+
+    @media (max-width:800px){ .stage{ flex-direction:column } .card{ width:92% } }
+
+    /* Estilos de fundo direto no CSS */
+    .bg-branco { --bg: #aa3535; }
+    .bg-preto { --bg: #000000; }
+    .bg-transparente { --bg: transparent; }
+    .bg-bege { --bg: #917023; }
+  </style>
+</head>
+<body>
+  <h1>Trocar cor de fundo das pizzas</h1>
+  <div class="controls">
+    <button class="btn" onclick="document.getElementById('stage').className='stage bg-branco'">Branco</button>
+    <button class="btn" onclick="document.getElementById('stage').className='stage bg-preto'">Preto</button>
+    <button class="btn" onclick="document.getElementById('stage').className='stage bg-transparente'">Transparente</button>
+    <button class="btn" onclick="document.getElementById('stage').className='stage bg-bege'">Bege claro</button>
+  </div>
+
+  <div class="stage bg-branco" id="stage">
+    <div class="card">
+      <img src="margherita.png" alt="Pizza Margherita" id="img1">
+      <div class="caption">Margherita</div>
+    </div>
+    <div class="card">
+      <img src="pepperoni.png" alt="Pizza Pepperoni" id="img2">
+      <div class="caption">Pepperoni</div>
+    </div>
+    <div class="card">
+      <img src="frango.png" alt="Pizza Frango" id="img3">
+      <div class="caption">Frango</div>
+    </div>
+  </div>
+
+  <div class="note">Dica: substitua <code>margherita.png</code>, <code>pepperoni.png</code> e <code>frango.png</code> pelos nomes dos seus arquivos. Agora as cores de fundo são controladas por classes CSS.</div>
+</body>
+</html>
